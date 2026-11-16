@@ -1,5 +1,7 @@
 {
-  "extends": ["stylelint-config-standard"],
+  "extends": [
+    "stylelint-config-standard-scss"
+  ],
   "plugins": [
     "stylelint-order"
   ],
@@ -15,15 +17,29 @@
       "flex-direction",
       "justify-content",
       "align-items",
+      "gap",
       "width",
+      "min-width",
+      "max-width",
       "height",
+      "min-height",
+      "max-height",
       "margin",
       "padding",
+      "font-family",
       "font-size",
+      "font-weight",
       "line-height",
+      "text-align",
       "color",
       "background",
-      "border"
+      "background-color",
+      "border",
+      "border-radius",
+      "box-shadow",
+      "opacity",
+      "transition",
+      "transform"
     ]
   }
 }
