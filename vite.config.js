@@ -1,11 +1,32 @@
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
+import injectHTML from 'vite-plugin-html-inject';
+import { ViteMinifyPlugin } from 'vite-plugin-minify';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig({
-  root: "./src",
+  root: './src',
   server: {
     port: 3000,
   },
   build: {
-    outDir: "../dist",
+    outDir: '../dist',
+    rollupOptions:{
+      input:{
+        main: './src/index.html',
+        about: './src/about.html'
+      }
+    }
   },
+  plugins: [
+    injectHTML(),
+    ViteMinifyPlugin(),
+    ViteImageOptimizer({
+      png: {
+        quality: 80,
+      },
+      jpg: {
+        quality: 80,
+      },
+    }),
+  ],
 });
